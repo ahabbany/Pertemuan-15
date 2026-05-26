@@ -1,22 +1,45 @@
-# Tugas Pertemuan 9
+# Sistem Perpustakaan Laravel
 
-## Routing dan View Anggota
-
-### Halaman Anggota
-![Anggota](screenshots/anggota.png)
-
-### Detail Anggota
-![Detail Anggota](screenshots/anggota3.png)
+## Identitas
+- Nama: Aghitsna Yashiiva A. A.
+- Mata Kuliah: Pemrograman Web 2
+- Tugas: Migration, Seeder, Accessor & Scope
 
 ---
 
-## Controller Kategori Buku
+# Fitur
+- Migration tabel kategori
+- Seeder kategori buku
+- Accessor Buku
+- Accessor Anggota
+- Scope Query Buku
+- Scope Query Anggota
 
-### Halaman Kategori
-![Kategori](screenshots/kategori.png)
+---
 
-### Detail Kategori
-![Detail Kategori](screenshots/kategori1.png)
+# Screenshot
 
-### Search Kategori
-![Search](screenshots/search.png)
+## Migration
+![Migration](screenshot/migrate.png)
+
+## Daftar Buku
+![Buku](screenshots/buku.png)
+
+## Daftar Anggota
+![Anggota](screenshots/dftrangg.png)
+
+## Test Query
+![Query](screenshots/query.png)
+
+## Test Accessor Scope
+![Accessor](screenshots/accessor.png)
+
+---
+
+# Cara Menjalankan Project
+
+```bash
+php artisan migrate
+php artisan db:seed --class=KategoriSeeder
+php artisan serve
+```
