@@ -32,7 +32,7 @@
 ![Query](screenshots/query.png)
 
 ## Test Accessor Scope
-![Accessor](screenshots/accessor.png)
+![Accessor](screenshots/accesor.png)
 
 ---
 
