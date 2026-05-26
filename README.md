@@ -20,7 +20,7 @@
 # Screenshot
 
 ## Migration
-![Migration](screenshot/migrate.png)
+![Migration](screenshots/migrate.png)
 
 ## Daftar Buku
 ![Buku](screenshots/buku.png)
