@@ -1,45 +1,18 @@
 # Sistem Perpustakaan Laravel
 
-## Identitas
-- Nama: Aghitsna Yashiiva A. A.
-- Mata Kuliah: Pemrograman Web 2
-- Tugas: Migration, Seeder, Accessor & Scope
+## Nama
+Aghitsna Yashiva A. A.
 
----
+## NIM
+60324090
 
-# Fitur
-- Migration tabel kategori
-- Seeder kategori buku
-- Accessor Buku
-- Accessor Anggota
-- Scope Query Buku
-- Scope Query Anggota
+## Screenshot Dashboard
+(screenshots/ds1.png)
+(screenshots/ds2.png)
 
----
+## Screenshot Daftar Buku Card
+(screenshots/buku1.png)
+(screenshots/buku2.png)
 
-# Screenshot
-
-## Migration
-![Migration](screenshots/migrate.png)
-
-## Daftar Buku
-![Buku](screenshots/buku.png)
-
-## Daftar Anggota
-![Anggota](screenshots/dftrangg.png)
-
-## Test Query
-![Query](screenshots/query.png)
-
-## Test Accessor Scope
-![Accessor](screenshots/accesor.png)
-
----
-
-# Cara Menjalankan Project
-
-```bash
-php artisan migrate
-php artisan db:seed --class=KategoriSeeder
-php artisan serve
-```
+## Screenshot Search Buku
+(screenshots/search-buku.png)
