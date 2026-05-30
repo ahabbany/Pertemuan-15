@@ -7,12 +7,17 @@ Aghitsna Yashiva A. A.
 60324090
 
 ## Screenshot Dashboard
-(screenshots/ds1.png)
-(screenshots/ds2.png)
+
+![Dashboard Bagian 1](screenshots/ds1.png)
+
+![Dashboard Bagian 2](screenshots/ds2.png)
 
 ## Screenshot Daftar Buku Card
-(screenshots/buku1.png)
-(screenshots/buku2.png)
+
+![Daftar Buku Bagian 1](screenshots/buku1.png)
+
+![Daftar Buku Bagian 2](screenshots/buku2.png)
 
 ## Screenshot Search Buku
-(screenshots/search-buku.png)
+
+![Search Buku](screenshots/search-buku.png)
