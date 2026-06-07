@@ -1,5 +1,11 @@
 <div class="card h-100 shadow-sm">
-    <div class="card-body">
+    <div class="card-body position-relative">
+
+        @if($showCheckbox ?? false)
+            <div class="position-absolute top-0 start-0 p-2">
+                <input type="checkbox" name="buku_ids[]" value="{{ $buku->id }}" class="form-check-input buku-checkbox">
+            </div>
+        @endif
 
         <div class="text-center mb-3">
             <i class="bi bi-book text-primary" style="font-size: 4rem;"></i>
@@ -50,6 +56,17 @@
                    class="btn btn-warning btn-sm">
                     Edit
                 </a>
+
+                <form action="{{ route('buku.destroy', $buku->id) }}" 
+                    method="POST" 
+                    class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" class="btn btn-sm btn-danger btn-delete w-100"
+                        data-judul="{{ $buku->judul }}">
+                        <i class="bi bi-trash"></i> Hapus
+                    </button>
+                </form>
 
             </div>
         @endif

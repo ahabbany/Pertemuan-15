@@ -6,18 +6,14 @@ Aghitsna Yashiva A. A.
 ## NIM
 60324090
 
-## Screenshot Dashboard
+## Validation Rules Advanced 
 
-![Dashboard Bagian 1](screenshots/ds1.png)
+![Dashboard Bagian 1](screenshots/1.png)
 
-![Dashboard Bagian 2](screenshots/ds2.png)
+## Bulk Delete Operations 
 
-## Screenshot Daftar Buku Card
+![Daftar Buku Bagian 1](screenshots/2.png)
 
-![Daftar Buku Bagian 1](screenshots/buku1.png)
+## Export Buku ke CSV
 
-![Daftar Buku Bagian 2](screenshots/buku2.png)
-
-## Screenshot Search Buku
-
-![Search Buku](screenshots/search-buku.png)
+![Search Buku](screenshots/4.png)

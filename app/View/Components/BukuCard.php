@@ -10,11 +10,13 @@ class BukuCard extends Component
 {
     public $buku;
     public $showActions;
+    public $showCheckbox;
 
-    public function __construct($buku, $showActions = true)
+    public function __construct($buku, $showActions = true, $showCheckbox = false)
     {
         $this->buku = $buku;
         $this->showActions = $showActions;
+        $this->showCheckbox = $showCheckbox;
     }
 
     public function render(): View|Closure|string

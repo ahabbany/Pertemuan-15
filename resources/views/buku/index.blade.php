@@ -8,9 +8,14 @@
         <i class="bi bi-book"></i>
         Daftar Buku
     </h1>
-    <a href="{{ route('buku.create') }}" class="btn btn-primary">
-        <i class="bi bi-plus-circle"></i> Tambah Buku
-    </a>
+    <div>
+        <a href="{{ route('buku.export') }}" class="btn btn-success">
+            <i class="bi bi-download"></i> Export CSV
+        </a>
+        <a href="{{ route('buku.create') }}" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Tambah Buku
+        </a>
+    </div>
 </div>
  
 {{-- Statistik Cards --}}
@@ -139,7 +144,19 @@
 
 </form>
 
-{{-- Daftar Buku --}}
+{{-- Bulk Delete Controls --}}
+@if ($bukus->count() > 0)
+<div class="d-flex align-items-center gap-3 mb-3 p-3 bg-light rounded border">
+    <div class="form-check">
+        <input type="checkbox" id="select-all" class="form-check-input">
+        <label class="form-check-label" for="select-all">Pilih Semua</label>
+    </div>
+    <button type="button" class="btn btn-danger btn-sm" id="btn-bulk-delete" disabled>
+        <i class="bi bi-trash"></i> Hapus Terpilih
+    </button>
+</div>
+@endif
+
 <div class="row">
     @forelse ($bukus as $buku)
 
@@ -147,6 +164,7 @@
             <x-buku-card
                 :buku="$buku"
                 :show-actions="true"
+                :show-checkbox="true"
             />
         </div>
 
@@ -169,5 +187,98 @@
             @endisset
         </p>
     </div>
-@endif
+
+    @endif
+    @push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectAll = document.getElementById('select-all');
+            const bulkDeleteBtn = document.getElementById('btn-bulk-delete');
+            const checkboxes = document.querySelectorAll('input[name="buku_ids[]"]');
+
+            if (!selectAll || !bulkDeleteBtn) return;
+
+            function toggleBulkDeleteButton() {
+                const checked = document.querySelectorAll('input[name="buku_ids[]"]:checked').length;
+                bulkDeleteBtn.disabled = checked === 0;
+            }
+
+            selectAll.addEventListener('change', function() {
+                checkboxes.forEach(function(cb) {
+                    cb.checked = selectAll.checked;
+                });
+                toggleBulkDeleteButton();
+            });
+
+            checkboxes.forEach(function(cb) {
+                cb.addEventListener('change', toggleBulkDeleteButton);
+            });
+
+            bulkDeleteBtn.addEventListener('click', function() {
+                const checked = document.querySelectorAll('input[name="buku_ids[]"]:checked');
+                if (checked.length === 0) return;
+
+                Swal.fire({
+                    title: 'Konfirmasi Hapus',
+                    text: 'Apakah Anda yakin ingin menghapus ' + checked.length + ' buku yang dipilih?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal'
+                }).then(function(result) {
+                    if (result.isConfirmed) {
+                        var form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '{{ route("buku.bulk-delete") }}';
+
+                        var token = document.createElement('input');
+                        token.type = 'hidden';
+                        token.name = '_token';
+                        token.value = '{{ csrf_token() }}';
+                        form.appendChild(token);
+
+                        checked.forEach(function(cb) {
+                            var input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = 'buku_ids[]';
+                            input.value = cb.value;
+                            form.appendChild(input);
+                        });
+
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.btn-delete').forEach(function(button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var form = this.closest('form');
+                    var judul = this.getAttribute('data-judul');
+
+                    Swal.fire({
+                        title: 'Konfirmasi Hapus',
+                        text: 'Apakah Anda yakin ingin menghapus buku "' + judul + '"?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Ya, Hapus!',
+                        cancelButtonText: 'Batal'
+                    }).then(function(result) {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+@endpush
 @endsection
