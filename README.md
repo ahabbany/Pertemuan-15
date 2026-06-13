@@ -8,12 +8,11 @@ Aghitsna Yashiva A. A.
 
 ## Auto-Generate Kode Anggota
 
-![Dashboard Bagian 1](screenshots/kode.png)
+![Auto_Generate](screenshots/kode.png)
 
 ## Export Anggota ke Excel 
 
-![Daftar Buku Bagian 1](screenshots/xlsx.png)
+![Export Anggota](screenshots/xlsx.png)
 
 ## Advanced Search & Filter
-
-![Search](screenshots/search%20(2).png.png)
+![Fitur Search](screenshots/baru.png)
