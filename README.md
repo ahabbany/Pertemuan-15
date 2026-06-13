@@ -6,14 +6,14 @@ Aghitsna Yashiva A. A.
 ## NIM
 60324090
 
-## Validation Rules Advanced 
+## Auto-Generate Kode Anggota
 
-![Dashboard Bagian 1](screenshots/1.png)
+![Dashboard Bagian 1](screenshots/kode.png)
 
-## Bulk Delete Operations 
+## Export Anggota ke Excel 
 
-![Daftar Buku Bagian 1](screenshots/2.png)
+![Daftar Buku Bagian 1](screenshots/xlsx.png)
 
-## Export Buku ke CSV
+## Advanced Search & Filter
 
-![Search Buku](screenshots/4.png)
+![Search Buku](screenshots/search (2).png)

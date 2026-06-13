@@ -22,7 +22,13 @@ Route::get('/buku/kategori/{kategori}', [BukuController::class, 'filterKategori'
 // Resource route untuk Buku
 Route::resource('buku', BukuController::class);
  
-// Resource route untuk Anggota (akan dibuat nanti)
+// Custom routes (harus sebelum resource route)
+Route::get('/anggota/search', [AnggotaController::class, 'search'])
+    ->name('anggota.search');
+Route::get('/anggota/export', [AnggotaController::class, 'export'])
+    ->name('anggota.export');
+
+// Resource route untuk Anggota
 Route::resource('anggota', AnggotaController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
