@@ -6,13 +6,17 @@ Aghitsna Yashiva A. A.
 ## NIM
 60324090
 
-## Auto-Generate Kode Anggota
+## Fitur Pengembalian Buku
 
-![Auto_Generate](screenshots/kode.png)
+![Kembalikan](screenshots/1a.png)
+![Jumlah Buku Bertambah](screenshots/1b.png)
 
-## Export Anggota ke Excel 
+## Laporan Transaksi  
 
-![Export Anggota](screenshots/xlsx.png)
+![Laporan Transaksi](screenshots/2a.png)
+![PDF Laporan](screenshots/2b.png)
 
-## Advanced Search & Filter
-![Fitur Search](screenshots/baru.png)
+## Notifikasi Terlambat 
+![Dashboard](screenshots/3a.png)
+![Daftar Transaksi](screenshots/3b.png)
+![Detail](screenshots/3c.png)

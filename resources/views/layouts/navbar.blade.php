@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link {{ Request::is('transaksi*') ? 'active' : '' }}" href="{{ route('transaksi.index') }}">
                         <i class="bi bi-arrow-left-right"></i> Transaksi
                     </a>
                 </li>

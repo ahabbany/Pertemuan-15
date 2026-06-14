@@ -8,7 +8,7 @@
     <div class="col-12 mb-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('buku.index') }}">Buku</a></li>
                 <li class="breadcrumb-item active">{{ $buku->judul }}</li>
             </ol>
