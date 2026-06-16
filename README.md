@@ -53,17 +53,26 @@ Sistem manajemen perpustakaan berbasis web yang dibangun dengan **Laravel 9** da
 
 ## 📸 Screenshot
 
-> Letakkan file screenshot di folder `screenshots/` dengan nama berikut:
+### 1. Dashboard
+![Dashboard](screenshots/dashboard.png)
 
-| # | Tampilan | File |
-|---|----------|------|
-| 1 | Dashboard | `screenshots/dashboard.png` |
-| 2 | Daftar Buku | `screenshots/buku.png` |
-| 3 | Daftar Anggota | `screenshots/anggota.png` |
-| 4 | Transaksi Peminjaman | `screenshots/transaksi.png` |
-| 5 | Notifikasi | `screenshots/notifikasi.png` |
-| 6 | Dark Mode | `screenshots/dark-mode.png` |
-| 7 | Laporan Transaksi | `screenshots/laporan.png` |
+### 2. Daftar Buku
+![Daftar Buku](screenshots/buku.png)
+
+### 3. Daftar Anggota
+![Daftar Anggota](screenshots/anggota.png)
+
+### 4. Transaksi Peminjaman
+![Transaksi Peminjaman](screenshots/transaksi.png)
+
+### 5. Notifikasi Terlambat
+![Notifikasi](screenshots/notifikasi.png)
+
+### 6. Dark Mode
+![Dark Mode](screenshots/dark-mode.png)
+
+### 7. Laporan Transaksi
+![Laporan](screenshots/laporan.png)
 
 ---
 
