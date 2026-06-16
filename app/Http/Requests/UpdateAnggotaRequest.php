@@ -22,7 +22,6 @@ class UpdateAnggotaRequest extends FormRequest
      */
     public function rules(): array
     {
-        // Get anggota ID from route parameter
         $anggotaId = $this->route('anggota');
         
         return [

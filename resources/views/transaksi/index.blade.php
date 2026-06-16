@@ -9,7 +9,16 @@
         Daftar Transaksi Peminjaman
     </h1>
     <div>
-        <a href="{{ route('transaksi.laporan') }}" class="btn btn-info text-white">
+        <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-download"></i> Export
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="{{ route('transaksi.exportPdf') }}"><i class="bi bi-file-pdf"></i> Export PDF</a></li>
+                <li><a class="dropdown-item" href="{{ route('transaksi.exportCsv') }}"><i class="bi bi-filetype-csv"></i> Export CSV</a></li>
+            </ul>
+        </div>
+        <a href="{{ route('laporan.index') }}" class="btn btn-info text-white">
             <i class="bi bi-file-text"></i> Laporan
         </a>
         <a href="{{ route('transaksi.create') }}" class="btn btn-primary">
@@ -88,10 +97,23 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ route('transaksi.show', $transaksi->id) }}" 
-                               class="btn btn-sm btn-info text-white">
-                                <i class="bi bi-eye"></i>
-                            </a>
+                            <div class="btn-group" role="group">
+                                <a href="{{ route('transaksi.show', $transaksi->id) }}" 
+                                   class="btn btn-sm btn-info text-white">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                @if($transaksi->status == 'Dipinjam' && $transaksi->terlambat > 0)
+                                    <form action="{{ route('notifications.kirimPeringatan', $transaksi->id) }}" 
+                                          method="POST" class="d-inline">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-danger" 
+                                                title="Kirim Peringatan"
+                                                onclick="return confirm('Kirim peringatan keterlambatan untuk {{ $transaksi->anggota->nama }}?')">
+                                            <i class="bi bi-bell"></i>
+                                        </button>
+                                    </form>
+                                @endif
+                            </div>
                         </td>
                     </tr>
                     @empty

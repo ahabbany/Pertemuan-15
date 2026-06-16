@@ -19,6 +19,7 @@ class Transaksi extends Model
         'tanggal_dikembalikan',
         'status',
         'denda',
+        'hari_terlambat',
         'keterangan',
     ];
 

@@ -33,6 +33,7 @@
 
 <h4>Daftar Buku</h4>
 
+<div class="table-responsive">
 <table class="table table-bordered">
 
     <thead class="table-dark">
@@ -60,5 +61,6 @@
     </tbody>
 
 </table>
+</div>
 
 @endsection

@@ -9,6 +9,9 @@
         Daftar Anggota
     </h1>
     <div>
+        <a href="{{ route('anggota.export') }}" class="btn btn-success">
+            <i class="bi bi-download"></i> Export Excel
+        </a>
         <a href="{{ route('anggota.create') }}" class="btn btn-primary">
             <i class="bi bi-plus-circle"></i> Tambah Anggota
         </a>

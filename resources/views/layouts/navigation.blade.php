@@ -28,10 +28,13 @@
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden sm:flex sm:items-center sm:ml-1">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <span id="darkModeToggleBreeze" title="Toggle Dark Mode" style="cursor:pointer;margin-right:6px;display:inline-flex;align-items:center;line-height:1;color:inherit">
+                                <i class="bi bi-moon-fill" id="darkModeIconBreeze" style="font-size:1.1rem"></i>
+                            </span>
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
@@ -88,6 +91,16 @@
             <x-responsive-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.*')">
                 {{ __('Transaksi') }}
             </x-responsive-nav-link>
+        </div>
+
+        <!-- Responsive Dark Mode -->
+        <div class="pt-2 pb-2 border-t border-gray-200 dark:border-gray-600">
+            <div class="px-4">
+                <button id="darkModeToggleBreezeMobile" class="flex items-center w-full px-2 py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition duration-150 ease-in-out" style="background:none;border:none">
+                    <i class="bi bi-moon-fill mr-2" id="darkModeIconBreezeMobile" style="font-size:1.25rem"></i>
+                    <span id="darkModeLabelBreeze">Mode Gelap</span>
+                </button>
+            </div>
         </div>
 
         <!-- Responsive Settings Options -->

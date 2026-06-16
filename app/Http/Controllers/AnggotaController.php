@@ -54,7 +54,17 @@ class AnggotaController extends Controller
     public function show(string $id)
     {
         $anggota = Anggota::findOrFail($id);
-        return view('anggota.show', compact('anggota'));
+
+        $riwayatTransaksis = $anggota->transaksis()->with('buku')->latest()->get();
+
+        $stats = [
+            'total_pinjam'    => $riwayatTransaksis->count(),
+            'sedang_dipinjam' => $riwayatTransaksis->where('status', 'Dipinjam')->count(),
+            'total_denda'     => $riwayatTransaksis->sum('denda'),
+            'sudah_kembali'   => $riwayatTransaksis->where('status', 'Dikembalikan')->count(),
+        ];
+
+        return view('anggota.show', compact('anggota', 'riwayatTransaksis', 'stats'));
     }
  
     public function create()

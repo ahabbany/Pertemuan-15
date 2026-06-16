@@ -9,6 +9,9 @@
         Daftar Buku
     </h1>
     <div>
+        <a href="{{ route('buku.export') }}" class="btn btn-success">
+            <i class="bi bi-download"></i> Export CSV
+        </a>
         <a href="{{ route('buku.create') }}" class="btn btn-primary">
             <i class="bi bi-plus-circle"></i> Tambah Buku
         </a>
@@ -100,5 +103,32 @@
     </div>
 
     @endif
+
+@push('scripts')
+<script>
+    document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const form = this.closest('form');
+            const judul = this.getAttribute('data-judul');
+
+            Swal.fire({
+                title: 'Konfirmasi Hapus',
+                text: `Apakah Anda yakin ingin menghapus buku "${judul}"?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        });
+    });
+</script>
+@endpush
 
 @endsection
