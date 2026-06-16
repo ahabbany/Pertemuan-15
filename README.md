@@ -95,7 +95,7 @@ Sistem manajemen perpustakaan berbasis web yang dibangun dengan **Laravel 9** da
 
 ```bash
 # 1. Clone repositori
-git clone https://github.com/username/perpustakaan.git
+git clone https://github.com/ahabbany/Pertemuan-15.git
 cd perpustakaan
 
 # 2. Install dependency PHP
