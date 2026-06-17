@@ -14,5 +14,13 @@
     "libgd-dev",
     "libicu-dev",
     "libcurl4-openssl-dev"
-  ]
+  ],
+  "steps": {
+    "build": {
+      "commands": [
+        "install-php-extensions zip",
+        "..."
+      ]
+    }
+  }
 }
