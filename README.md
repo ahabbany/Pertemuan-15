@@ -95,7 +95,7 @@ Sistem manajemen perpustakaan berbasis web yang dibangun dengan **Laravel 9** da
 ## 🚀 Instalasi
 
 ### Prasyarat
-- PHP ^8.0
+- PHP ^8.1
 - Composer
 - MySQL / MariaDB
 - Node.js & NPM
