@@ -62,7 +62,7 @@ class TransaksiBusinessRulesTest extends TestCase
 
         $response->assertSessionHas('error');
         $response->assertRedirect('/transaksi/create');
-        $this->assertStringContainsString('Stok buku habis', session('error'));
+        $this->assertStringContainsString('sedang habis', session('error'));
     }
 
     public function test_pinjam_buku_saat_memiliki_pinjaman_overdue()
@@ -96,7 +96,7 @@ class TransaksiBusinessRulesTest extends TestCase
             ]);
 
         $response->assertSessionHas('error');
-        $this->assertStringContainsString('jatuh tempo', session('error'));
+        $this->assertStringContainsString('melewati batas waktu', session('error'));
     }
 
     public function test_pinjam_lebih_dari_3_buku()
@@ -145,7 +145,7 @@ class TransaksiBusinessRulesTest extends TestCase
             ]);
 
         $response->assertSessionHas('error');
-        $this->assertStringContainsString('Maksimal 3', session('error'));
+        $this->assertStringContainsString('batas maksimal 3', session('error'));
     }
 
     public function test_pinjam_buku_yang_sama()
@@ -168,7 +168,7 @@ class TransaksiBusinessRulesTest extends TestCase
             ]);
 
         $response->assertSessionHas('error');
-        $this->assertStringContainsString('buku yang sama', session('error'));
+        $this->assertStringContainsString('pinjaman aktif untuk buku', session('error'));
     }
 
     public function test_pengembalian_tepat_waktu()

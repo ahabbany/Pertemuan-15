@@ -2,5 +2,16 @@
   "$schema": "https://schema.railpack.com",
   "packages": {
     "php": "8.3"
-  }
+  },
+  "buildAptPackages": [
+    "bison",
+    "re2c",
+    "libsqlite3-dev",
+    "libonig-dev",
+    "libwebp-dev",
+    "libxpm-dev",
+    "libzip-dev",
+    "libgd-dev",
+    "libicu-dev"
+  ]
 }
