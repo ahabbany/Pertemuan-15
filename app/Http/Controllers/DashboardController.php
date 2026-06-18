@@ -11,6 +11,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        return 'Dashboard OK';
+
         $stats = [
             'total_buku'          => Buku::count(),
             'total_anggota'       => Anggota::where('status', 'Aktif')->count(),
