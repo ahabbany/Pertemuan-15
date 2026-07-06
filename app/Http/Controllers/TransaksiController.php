@@ -18,7 +18,10 @@ class TransaksiController extends Controller
                                ->latest()
                                ->get();
 
-        return view('transaksi.index', compact('transaksis'));
+        $dipinjam = $transaksis->where('status', 'Dipinjam');
+        $dikembalikan = $transaksis->where('status', 'Dikembalikan');
+
+        return view('transaksi.index', compact('transaksis', 'dipinjam', 'dikembalikan'));
     }
 
     public function create()

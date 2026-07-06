@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--color-cokelat);">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <i class="bi bi-book-fill"></i>

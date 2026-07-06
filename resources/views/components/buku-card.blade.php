@@ -48,7 +48,7 @@
             <div class="d-grid gap-2 mt-3">
 
                 <a href="{{ route('buku.show',$buku->id) }}"
-                   class="btn btn-info text-white btn-sm">
+                   class="btn btn-primary text-white btn-sm">
                     Detail
                 </a>
 

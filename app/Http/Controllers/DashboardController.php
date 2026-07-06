@@ -47,9 +47,20 @@ class DashboardController extends Controller
         $recentTransaksi = Transaksi::with(['anggota', 'buku'])
                                     ->latest()->take(5)->get();
 
+        $stokMenipis = Buku::where('stok', '>', 0)
+                           ->where('stok', '<=', 5)
+                           ->orderBy('stok')
+                           ->take(5)->get();
+
+        $grafikKategori = Buku::selectRaw('kategori, COUNT(*) as total')
+                              ->groupBy('kategori')
+                              ->orderByDesc('total')
+                              ->get();
+
         return view('dashboard', compact(
             'stats', 'chartData', 'bukuPopuler',
-            'anggotaAktif', 'recentTransaksi'
+            'anggotaAktif', 'recentTransaksi',
+            'stokMenipis', 'grafikKategori'
         ));
     }
 }

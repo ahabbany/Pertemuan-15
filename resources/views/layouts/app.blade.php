@@ -13,6 +13,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <style>
+        :root {
+            --color-cokelat: #1A237E;
+            --color-butter: #FF6F00;
+            --color-cokelat-gelap: #0D47A1;
+        }
+        [data-bs-theme="dark"] {
+            --color-cokelat: #0D1B6E;
+            --color-butter: #E65100;
+            --color-cokelat-gelap: #072A6E;
+        }
         body { transition: background-color .3s, color .3s; }
         [data-bs-theme="dark"] .navbar { background-color: #1a1d23 !important; }
         [data-bs-theme="dark"] .card { background-color: #2d3139; border-color: #40444f; }
@@ -42,8 +52,8 @@
         [data-bs-theme="dark"] .table-responsive { color: #e4e6ea; }
         [data-bs-theme="dark"] .btn-secondary { background-color: #40444f; border-color: #40444f; }
         [data-bs-theme="dark"] .btn-secondary:hover { background-color: #505560; border-color: #505560; }
-        [data-bs-theme="dark"] .btn-info { background-color: #1a6a7a; border-color: #1a6a7a; color: #fff; }
-        [data-bs-theme="dark"] .btn-info:hover { background-color: #208a9a; border-color: #208a9a; color: #fff; }
+        [data-bs-theme="dark"] .btn-primary { background-color: #1565C0; border-color: #1565C0; }
+        [data-bs-theme="dark"] .btn-primary:hover { background-color: #1976D2; border-color: #1976D2; }
     </style>
 
     @stack('styles')
