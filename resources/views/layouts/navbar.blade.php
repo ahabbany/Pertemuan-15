@@ -42,11 +42,13 @@
                         @endif
                     </a>
                 </li>
+                <li class="nav-item d-flex align-items-center me-2">
+                    <span class="nav-link" id="darkModeToggle" title="Toggle Dark Mode" style="cursor:pointer;color:inherit;padding:0;line-height:1;display:inline-flex;align-items:center">
+                        <i class="bi bi-moon-fill" id="darkModeIcon"></i>
+                    </span>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" role="button" data-bs-toggle="dropdown">
-                        <span id="darkModeToggle" title="Toggle Dark Mode" style="cursor:pointer;color:inherit;padding:0;line-height:1;display:inline-flex;align-items:center">
-                            <i class="bi bi-moon-fill" id="darkModeIcon"></i>
-                        </span>
                         <i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">

@@ -44,7 +44,8 @@
         <script>
         // Dark Mode
         (function() {
-            var theme = localStorage.getItem('theme');
+            try { var saved = localStorage.getItem('theme'); } catch(e) {}
+            var theme = saved;
             if (!theme) {
                 theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
@@ -67,7 +68,7 @@
             var next = current === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-bs-theme', next);
             html.classList.toggle('dark', next === 'dark');
-            localStorage.setItem('theme', next);
+            try { localStorage.setItem('theme', next); } catch(e) {}
             var icons = [
                 document.getElementById('darkModeIconBreeze'),
                 document.getElementById('darkModeIconBreezeMobile'),
@@ -80,8 +81,7 @@
         }
 
         document.addEventListener('click', function(e) {
-            var btn = e.target.closest('#darkModeToggleBreeze');
-            if (btn) {
+            if (e.target.closest('#darkModeToggleBreeze')) {
                 e.stopPropagation();
                 toggleDarkBreeze();
             }

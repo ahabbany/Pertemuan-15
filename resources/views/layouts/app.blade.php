@@ -80,7 +80,8 @@
     <script>
     // Dark Mode
     (function() {
-        var theme = localStorage.getItem('theme');
+        try { var saved = localStorage.getItem('theme'); } catch(e) {}
+        var theme = saved;
         if (!theme) {
             theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
@@ -92,18 +93,22 @@
         }
     })();
 
-    document.addEventListener('click', function(e) {
-        var toggle = e.target.closest('#darkModeToggle');
-        if (!toggle) return;
-        e.stopPropagation();
+    function toggleDarkMode() {
         var html = document.documentElement;
         var current = html.getAttribute('data-bs-theme');
         var next = current === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-bs-theme', next);
         html.classList.toggle('dark', next === 'dark');
-        localStorage.setItem('theme', next);
+        try { localStorage.setItem('theme', next); } catch(e) {}
         var icon = document.getElementById('darkModeIcon');
         if (icon) icon.className = next === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    }
+
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('#darkModeToggle')) {
+            e.stopPropagation();
+            toggleDarkMode();
+        }
     });
 
     // Auto-update notifikasi badge setiap 30 detik
