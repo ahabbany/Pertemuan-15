@@ -1,5 +1,5 @@
-<footer class="bg-light border-top">
-    <div class="container">
+<footer class="bg-light border-top mt-auto">
+    <div class="container-fluid">
         <div class="row py-4">
             <div class="col-md-6">
                 <h5><i class="bi bi-book-fill text-primary"></i> Sistem Perpustakaan</h5>

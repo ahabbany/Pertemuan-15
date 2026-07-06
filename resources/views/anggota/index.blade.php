@@ -178,12 +178,12 @@
                                     </a>
                                     <form action="{{ route('anggota.destroy', $anggota->id) }}" 
                                           method="POST" 
-                                          class="d-inline"
-                                          onsubmit="return confirm('Yakin ingin menghapus anggota {{ $anggota->nama }}?')">
+                                          class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" 
-                                                class="btn btn-sm btn-danger"
+                                        <button type="button" 
+                                                class="btn btn-sm btn-danger btn-delete-anggota"
+                                                data-nama="{{ $anggota->nama }}"
                                                 title="Hapus">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -259,11 +259,11 @@
                             <a href="{{ route('anggota.edit', $anggota->id) }}" class="btn btn-warning btn-sm flex-fill">
                                 <i class="bi bi-pencil"></i> Edit
                             </a>
-                            <form action="{{ route('anggota.destroy', $anggota->id) }}" method="POST" class="flex-fill"
-                                  onsubmit="return confirm('Yakin ingin menghapus anggota {{ $anggota->nama }}?')">
+                            <form action="{{ route('anggota.destroy', $anggota->id) }}" method="POST" class="flex-fill">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm w-100">
+                                <button type="button" class="btn btn-danger btn-sm w-100 btn-delete-anggota"
+                                        data-nama="{{ $anggota->nama }}">
                                     <i class="bi bi-trash"></i> Hapus
                                 </button>
                             </form>
@@ -301,6 +301,29 @@
         var activeBtn = document.querySelector('.view-toggle .btn[data-view="' + savedView + '"]');
         if (activeBtn) activeBtn.classList.add('active-view');
     })();
+
+    document.querySelectorAll('.btn-delete-anggota').forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            var form = this.closest('form');
+            var nama = this.getAttribute('data-nama');
+
+            Swal.fire({
+                title: 'Konfirmasi Hapus',
+                text: 'Apakah Anda yakin ingin menghapus anggota "' + nama + '"?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus!',
+                cancelButtonText: 'Batal'
+            }).then(function(result) {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        });
+    });
 </script>
 @endpush
 
