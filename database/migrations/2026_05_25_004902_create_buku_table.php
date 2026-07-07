@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('kode_buku', 20)->unique();
             $table->string('judul', 200);
             $table->enum('kategori', [
-                'Programming', 
-                'Database', 
-                'Web Design', 
-                'Networking',
-                'Data Science'
+                'Pemrograman',
+                'Basis Data',
+                'Desain Web',
+                'Jaringan',
+                'Ilmu Data'
             ]);
             $table->string('pengarang', 100);
             $table->string('penerbit', 100);
