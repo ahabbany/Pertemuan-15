@@ -121,9 +121,9 @@
         </div>
     </div>
 
-    {{-- Charts + Widgets Row --}}
+    {{-- Charts Row --}}
     <div class="row mb-4">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="card h-100">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span><i class="bi bi-graph-up"></i> Transaksi 6 Bulan Terakhir</span>
@@ -133,9 +133,25 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+    </div>
+
+    {{-- Distribusi Kategori --}}
+    <div class="row mb-4">
+        <div class="col-md-6">
             <div class="card h-100">
-                <div class="card-header"><i class="bi bi-trophy"></i> Top 5 Buku Populer</div>
+                <div class="card-header">
+                    <i class="bi bi-pie-chart"></i> Distribusi Kategori Buku
+                </div>
+                <div class="card-body">
+                    <canvas id="chartKategori" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <i class="bi bi-trophy"></i> Top 5 Buku Populer
+                </div>
                 <div class="card-body">
                     <canvas id="chartBuku" height="200"></canvas>
                 </div>
@@ -266,6 +282,18 @@ new Chart(document.getElementById('chartBuku'), {
         labels: @json($bukuPopuler->pluck('judul')),
         datasets: [{
             data: @json($bukuPopuler->pluck('transaksis_count')),
+            backgroundColor: ['#667eea','#11998e','#f093fb','#ff6a00','#4facfe']
+        }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12 } } } }
+});
+
+new Chart(document.getElementById('chartKategori'), {
+    type: 'pie',
+    data: {
+        labels: @json($grafikKategori->pluck('kategori')),
+        datasets: [{
+            data: @json($grafikKategori->pluck('total')),
             backgroundColor: ['#667eea','#11998e','#f093fb','#ff6a00','#4facfe']
         }]
     },
