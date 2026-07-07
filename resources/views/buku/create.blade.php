@@ -60,20 +60,20 @@
                                     id="kategori" 
                                     class="form-select @error('kategori') is-invalid @enderror">
                                 <option value="">-- Pilih Kategori --</option>
-                                <option value="Programming" {{ old('kategori') == 'Programming' ? 'selected' : '' }}>
-                                    Programming
+                                <option value="Pemrograman" {{ old('kategori') == 'Pemrograman' ? 'selected' : '' }}>
+                                    Pemrograman
                                 </option>
-                                <option value="Database" {{ old('kategori') == 'Database' ? 'selected' : '' }}>
-                                    Database
+                                <option value="Basis Data" {{ old('kategori') == 'Basis Data' ? 'selected' : '' }}>
+                                    Basis Data
                                 </option>
-                                <option value="Web Design" {{ old('kategori') == 'Web Design' ? 'selected' : '' }}>
-                                    Web Design
+                                <option value="Desain Web" {{ old('kategori') == 'Desain Web' ? 'selected' : '' }}>
+                                    Desain Web
                                 </option>
-                                <option value="Networking" {{ old('kategori') == 'Networking' ? 'selected' : '' }}>
-                                    Networking
+                                <option value="Jaringan" {{ old('kategori') == 'Jaringan' ? 'selected' : '' }}>
+                                    Jaringan
                                 </option>
-                                <option value="Data Science" {{ old('kategori') == 'Data Science' ? 'selected' : '' }}>
-                                    Data Science
+                                <option value="Ilmu Data" {{ old('kategori') == 'Ilmu Data' ? 'selected' : '' }}>
+                                    Ilmu Data
                                 </option>
                             </select>
                             @error('kategori')

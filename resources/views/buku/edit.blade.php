@@ -59,7 +59,7 @@
                                     id="kategori" 
                                     class="form-select @error('kategori') is-invalid @enderror">
                                 <option value="">-- Pilih Kategori --</option>
-                                @foreach(['Programming', 'Database', 'Web Design', 'Networking', 'Data Science'] as $kat)
+                                @foreach(['Pemrograman', 'Basis Data', 'Desain Web', 'Jaringan', 'Ilmu Data'] as $kat)
                                     <option value="{{ $kat }}" 
                                             {{ old('kategori', $buku->kategori) == $kat ? 'selected' : '' }}>
                                         {{ $kat }}

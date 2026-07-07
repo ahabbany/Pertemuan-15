@@ -34,7 +34,7 @@ class TransaksiBusinessRulesTest extends TestCase
             'penerbit' => 'Penerbit Test',
             'tahun_terbit' => 2024,
             'harga' => 50000,
-            'kategori' => 'Programming',
+            'kategori' => 'Pemrograman',
             'kode_buku' => 'BK-TEST',
         ]);
     }
@@ -49,7 +49,7 @@ class TransaksiBusinessRulesTest extends TestCase
             'penerbit' => 'Test',
             'tahun_terbit' => 2024,
             'harga' => 50000,
-            'kategori' => 'Programming',
+            'kategori' => 'Pemrograman',
         ]);
 
         $response = $this->actingAs($this->user)
@@ -84,7 +84,7 @@ class TransaksiBusinessRulesTest extends TestCase
             'penerbit' => 'Test',
             'tahun_terbit' => 2024,
             'harga' => 50000,
-            'kategori' => 'Programming',
+            'kategori' => 'Pemrograman',
         ]);
 
         $response = $this->actingAs($this->user)
@@ -111,7 +111,7 @@ class TransaksiBusinessRulesTest extends TestCase
                 'penerbit' => 'Test',
                 'tahun_terbit' => 2024,
                 'harga' => 50000,
-                'kategori' => 'Programming',
+                'kategori' => 'Pemrograman',
             ]);
             $bukuList[] = $b;
 
@@ -133,7 +133,7 @@ class TransaksiBusinessRulesTest extends TestCase
             'penerbit' => 'Test',
             'tahun_terbit' => 2024,
             'harga' => 50000,
-            'kategori' => 'Programming',
+            'kategori' => 'Pemrograman',
         ]);
 
         $response = $this->actingAs($this->user)

@@ -140,7 +140,7 @@
                             </td>
                             <td><i class="bi bi-person"></i> {{ $buku->pengarang }}</td>
                             <td>
-                                <span class="badge bg-{{ $buku->kategori == 'Programming' ? 'primary' : ($buku->kategori == 'Database' ? 'success' : ($buku->kategori == 'Web Design' ? 'info' : ($buku->kategori == 'Networking' ? 'warning' : 'danger'))) }}">
+                                <span class="badge bg-{{ $buku->kategori == 'Pemrograman' ? 'primary' : ($buku->kategori == 'Basis Data' ? 'success' : ($buku->kategori == 'Desain Web' ? 'info' : ($buku->kategori == 'Jaringan' ? 'warning' : 'danger'))) }}">
                                     {{ $buku->kategori }}
                                 </span>
                             </td>

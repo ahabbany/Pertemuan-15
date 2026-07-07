@@ -11,7 +11,7 @@ class BukuFactory extends Factory
 
     public function definition()
     {
-        $kategori = ['Programming', 'Database', 'Web Design', 'Networking', 'Data Science'];
+        $kategori = ['Pemrograman', 'Basis Data', 'Desain Web', 'Jaringan', 'Ilmu Data'];
 
         return [
             'kode_buku' => 'BK-' . strtoupper(fake()->bothify('???###')),

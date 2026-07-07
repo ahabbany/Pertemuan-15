@@ -17,7 +17,7 @@ class StoreBukuRequest extends FormRequest
         return [
             'kode_buku' => ['required', 'string', 'max:20', 'unique:buku,kode_buku', new KodeBukuFormat],
             'judul' => 'required|string|max:200',
-            'kategori' => 'required|in:Programming,Database,Web Design,Networking,Data Science',
+            'kategori' => 'required|in:Pemrograman,Basis Data,Desain Web,Jaringan,Ilmu Data',
             'pengarang' => 'required|string|max:100',
             'penerbit' => 'required|string|max:100',
             'tahun_terbit' => 'required|integer|min:1900|max:' . date('Y'),
@@ -34,9 +34,9 @@ class StoreBukuRequest extends FormRequest
         $validator->after(function ($validator) {
             $data = $validator->getData();
 
-            if (isset($data['kategori']) && $data['kategori'] === 'Programming') {
+            if (isset($data['kategori']) && $data['kategori'] === 'Pemrograman') {
                 if (isset($data['bahasa']) && $data['bahasa'] !== 'Inggris') {
-                    $validator->errors()->add('bahasa', 'Untuk kategori Programming, bahasa harus Inggris.');
+                    $validator->errors()->add('bahasa', 'Untuk kategori Pemrograman, bahasa harus Inggris.');
                 }
             }
 
