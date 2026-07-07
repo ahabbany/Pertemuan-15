@@ -19,12 +19,12 @@
 
         <div class="card-body">
 
-            <h4>{{ $kategori['nama'] }}</h4>
+            <h4>{{ $kategori->nama_kategori }}</h4>
 
-            <p>{{ $kategori['deskripsi'] }}</p>
+            <p>{{ $kategori->deskripsi }}</p>
 
             <span class="badge bg-primary">
-                {{ $kategori['jumlah_buku'] }} Buku
+                {{ $kategori->buku_count }} Buku
             </span>
 
         </div>

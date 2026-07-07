@@ -14,4 +14,9 @@ class Kategori extends Model
         'icon',
         'warna'
     ];
+
+    public function buku()
+    {
+        return $this->hasMany(Buku::class, 'kategori', 'nama_kategori');
+    }
 }

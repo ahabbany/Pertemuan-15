@@ -19,12 +19,12 @@
 
     <div class="card-body">
 
-        <h3>{{ $kategori['nama'] }}</h3>
+        <h3>{{ $kategori->nama_kategori }}</h3>
 
-        <p>{{ $kategori['deskripsi'] }}</p>
+        <p>{{ $kategori->deskripsi }}</p>
 
         <span class="badge bg-success">
-            {{ $kategori['jumlah_buku'] }} Buku
+            {{ $kategori->buku_count }} Buku
         </span>
 
     </div>
@@ -47,16 +47,24 @@
 
     <tbody>
 
-        @foreach($buku_list as $index => $buku)
+        @forelse($buku_list as $index => $buku)
 
         <tr>
             <td>{{ $index + 1 }}</td>
-            <td>{{ $buku['judul'] }}</td>
-            <td>{{ $buku['penulis'] }}</td>
-            <td>{{ $buku['tahun'] }}</td>
+            <td>{{ $buku->judul }}</td>
+            <td>{{ $buku->pengarang }}</td>
+            <td>{{ $buku->tahun_terbit }}</td>
         </tr>
 
-        @endforeach
+        @empty
+
+        <tr>
+            <td colspan="4" class="text-center text-muted">
+                Belum ada buku di kategori ini
+            </td>
+        </tr>
+
+        @endforelse
 
     </tbody>
 
